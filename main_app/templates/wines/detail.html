@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Wine Detail</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ wine.name }}</span>
+    <p>Description: {{ wine.description }} </p>
+    <p>Price: $ {{ wine.price }}, </p>
+    {% if wine.year > 2010 %}
+      <p>Year: {{ wine.year }} </p>
+    {% else %}
+      <p>year: Vintage, </p>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}  

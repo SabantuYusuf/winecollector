@@ -5,16 +5,18 @@
 
 {% for wine in wines %}
   <div class="card">
-    <div class="card-content">
-      <span class="card-title">{{ wine.name }}</span>
-      <p>Description: {{ wine.description }}</p>
-      <p>Price: $ {{ wine.price }}, </p>
-      {% if wine.year > 2010 %}
-        <p>Year: {{ wine.year }} </p>
-      {% else %}
-        <p>year: Vintage, 60 years or more</p>
-      {% endif %}
-    </div>
+    <a href="{% url 'detail' wine.id %}">
+      <div class="card-content">
+        <span class="card-title">{{ wine.name }}</span>
+        <p>Description: {{ wine.description }}</p>
+        <p>Price: $ {{ wine.price }}, </p>
+        {% if wine.year > 2010 %}
+          <p>Year: {{ wine.year }} </p>
+        {% else %}
+          <p>year: Vintage, </p>
+        {% endif %}
+      </div>
+    </a>
   </div>
 {% endfor %}
 

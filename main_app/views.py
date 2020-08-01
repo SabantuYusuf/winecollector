@@ -20,7 +20,7 @@ from .models import Wine
 # Create your views here.
 
 def home(request):
-	return HttpResponse('<h1>Hello</h1>')
+	return render(request, 'home.html')
 
 
 def about(request):
@@ -42,7 +42,8 @@ def wines_detail(request, wine_id):
 	return render(request, 'wines/detail.html', )
 
 
-
+def contact(request):
+	return render(request, 'contact.html')
 
 
 
